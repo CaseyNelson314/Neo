@@ -11,7 +11,6 @@ static Lightbar lightbar {
 
 void setup()
 {
-    // Serial.begin(115200);
     lightbar.begin();
 }
 

@@ -33,14 +33,16 @@ class Volume
 {
     uint8_t pin;
 
+    Udon::MovingAverage<100> ma;
+
 public:
     Volume(uint8_t pin)
         : pin(pin)
     {}
 
-    uint16_t getVoltage() const
+    uint16_t getVoltage()
     {
-        return analogRead(pin);
+        return ma(analogRead(pin));
     }
 };
 
